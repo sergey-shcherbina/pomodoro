@@ -4,6 +4,7 @@ const root = document.querySelector(':root'),
 			modal = document.querySelector('.modal_back'),
 			cross = modal.querySelector('.cross'),
 			diagramBox = document.querySelector('.diagram'),
+			pieceRight = diagramBox.querySelector('.piece.right'),
 			timerBord = diagramBox.querySelector('.timer'),
 		  pause = diagramBox.querySelector('.pause'),
 			pauseAgain = diagramBox.querySelector('.pause_again'),
@@ -50,6 +51,10 @@ function formSeconds(seconds) {
 	return formSeconds;
 }
 
+function circle() {
+	pieceRight.style.transform = 'rotate('+540+'deg)';
+}
+
 function timer(seconds, max) {
   let deg = (360 * seconds / max) + 180;
   if(seconds >= max / 2){
@@ -57,8 +62,7 @@ function timer(seconds, max) {
   }else{
     diagramBox.classList.remove('over_50');
   }
-
-  diagramBox.querySelector('.piece.right').style.transform = 'rotate('+deg+'deg)';
+	pieceRight.style.transform = 'rotate('+deg+'deg)';
 	timerBord.innerText = `${minutes(seconds)}:${formSeconds(seconds)}`;
 	if (seconds > 0) {
 		timerId = setTimeout(() => {
@@ -92,6 +96,7 @@ function timer(seconds, max) {
 
 preview.addEventListener('click', () => {
 	preview.classList.add('h');
+	circle();
 });
 
 settings.addEventListener('click', () => modal.classList.remove('h'));
@@ -188,6 +193,8 @@ pom.addEventListener('click', () => {
 	pomText.classList.remove('text_light');
 	seconds = pomSeconds;
 	timerBord.innerText = `${minutes(seconds)}:${formSeconds(seconds)}`;
+	circle();
+	pieceRight.style.transform = 'rotate('+180+'deg)';
 	if (short.classList.contains('color')) { 
 		short.classList.remove('color');
 		shortText.classList.remove('text_dark');
@@ -211,6 +218,7 @@ short.addEventListener('click', () => {
 	shortText.classList.remove('text_light');
 	seconds = shortSeconds;
 	timerBord.innerText = `${minutes(seconds)}:${formSeconds(seconds)}`;
+	circle();
 	if (pom.classList.contains('color')) { 
 		pom.classList.remove('color');
 		pomText.classList.remove('text_dark');
@@ -234,6 +242,7 @@ long.addEventListener('click', () => {
 	longText.classList.remove('text_light');
 	seconds = longSeconds;
 	timerBord.innerText = `${minutes(seconds)}:${formSeconds(seconds)}`;
+	circle();
 	if (pom.classList.contains('color')) { 
 		pom.classList.remove('color');
 		pomText.classList.remove('text_dark');
