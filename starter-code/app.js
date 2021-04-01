@@ -1,4 +1,5 @@
 const root = document.querySelector(':root'),
+			preview = document.querySelector('.prev'),
 			settings = document.querySelector('.settings'),
 			modal = document.querySelector('.modal_back'),
 			cross = modal.querySelector('.cross'),
@@ -36,7 +37,7 @@ const root = document.querySelector(':root'),
 let pomSeconds = 1500, shortSeconds = 300, longSeconds = 900,
 		seconds = pomSeconds, prymaryColor = '#F87070', prymaryFont = 'Kumbh Sans',
 		timerId;			
-			
+		
 function minutes(seconds) {
 	let minutes = Math.floor(seconds / 60);
 	minutes = minutes < 10 ?'0' + minutes : minutes;
@@ -88,6 +89,10 @@ function timer(seconds, max) {
 		pause.classList.remove('h');
 	})
 }
+
+preview.addEventListener('click', () => {
+	preview.classList.add('h');
+});
 
 settings.addEventListener('click', () => modal.classList.remove('h'));
 cross.addEventListener('click', () => modal.classList.add('h'));
