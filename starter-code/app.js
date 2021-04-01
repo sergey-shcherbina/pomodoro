@@ -52,7 +52,8 @@ function formSeconds(seconds) {
 }
 
 function circle() {
-	pieceRight.style.transform = 'rotate('+540+'deg)';
+	timer(seconds, seconds);
+	clearTimeout(timerId);
 }
 
 function timer(seconds, max) {
