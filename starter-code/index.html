@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Pomodoro app</title>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="logo">
+      <img src="assets/logo.svg">
+    </div>
+    <div class="wrap_choice">
+      <div class="choice">
+        <div id="pom" class="pom color">
+          <span id="p_text" class="pom_text text_dark">pomodoro</span>
+        </div>
+        <div id="short" class="pom">
+          <span id="s_text" class="pom_text text_light">short break</span>
+        </div>
+        <div id="long" class="pom">
+          <span id="l_text" class="pom_text text_light">long break</span>
+        </div>
+      </div>
+    </div>
+    <div class="timer_group">
+      <div class="timer_wrap">
+        <div class="diagram">
+          <div class="piece left"></div>
+          <div class="piece right"></div> 
+          <div class="in_circle">
+            <span class="timer">00:00</span>
+            <span class="start">START </span>
+            <span class="pause h">PAUSE</span>
+            <span class="pause_again h">PAUSE</span>
+            <span class="restart h">RESTART</span>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="settings">
+      <img src="assets/icon-settings.svg">
+    </div>
+  </div>
+  <div class="modal_back h">
+    <div class="set_block">
+      <div class="set_cross">
+        <span class="set">Setting</span>
+        <img src="assets/icon-close.svg" class="cross">
+      </div>
+      <span class="minute">TIME (MINUTES)</span>
+      <div class="set_wrap">
+        <div class="set_time">
+          <div class="set_all">
+            <span class="s_timer">pomodoro</span>
+            <div class="set_timer">
+              <span id="p_set" class="set_minutes">25</span>
+              <div class="arrows">
+                <div id="p_plus" class="plus">
+                  <img src="assets/icon-arrow-up.svg">
+                </div>
+                <div id="p_minus" class="minus">
+                  <img src="assets/icon-arrow-down.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="set_all ml">
+            <span class="s_timer">short break</span>
+            <div class="set_timer">
+              <span id="sh_set" class="set_minutes">5</span>
+              <div class="arrows">
+                <div id="sh_plus" class="plus">
+                  <img src="assets/icon-arrow-up.svg">
+                </div>
+                <div id="sh_minus" class="minus">
+                  <img src="assets/icon-arrow-down.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="set_all ml">
+            <span class="s_timer">long break</span>
+            <div class="set_timer">
+              <span id="l_set" class="set_minutes">15</span>
+              <div class="arrows">
+                <div id="l_plus" class="plus">
+                  <img src="assets/icon-arrow-up.svg">
+                </div>
+                <div id="l_minus" class="minus">
+                  <img src="assets/icon-arrow-down.svg">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <div class="font_block">
+        <span class="font_color">FONT</span>
+        <div class="temp_fc">
+          <button id="font_one" class="set_font font_dark">
+            <span class="aa a_one">Aa</span>
+          </button>
+          <button id="font_two" class="set_font font_light">
+            <span class="aa a_two">Aa</span>
+          </button>
+          <button id="font_three"class="set_font font_light">
+            <span class="aa a_three">Aa</span>
+          </button>
+        </div>
+      </div>
+      <div class="color_block">
+        <span class="font_color">COLOR</span> 
+        <div class="temp_fc">
+          <div class="set_color color_one">
+            <span id="ch_one" class="check_mark">&#10004;</span>
+          </div>
+          <div class="set_color color_two">
+            <span id="ch_two"class="check_mark h">&#10004;</span>
+          </div>
+          <div class="set_color color_three">
+            <span id="ch_three"class="check_mark h">&#10004;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="apply_button">
+      <span class="apply">Apply</span>
+    </button>
+  </div>  
+  <script src="app.js"></script>
+</body>
+</html>
