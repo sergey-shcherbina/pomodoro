@@ -70,6 +70,7 @@ function timer(seconds, max) {
 			timer(seconds - 1, max);
 		}, 1000);
 	} else {
+		circle();
 		clearTimeout(timerId);
 		reStart.classList.remove('h')
 		pause.classList.add('h');
